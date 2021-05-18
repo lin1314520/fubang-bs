@@ -30,6 +30,12 @@ public class SysUserLogin implements Serializable {
     @TableId(value = "user_id", type = IdType.AUTO)
     private Integer userId;
 
+    @ApiModelProperty(value = "用户姓名")
+    private String userName;
+
+    @ApiModelProperty(value = "学号")
+    private String userNum;
+
     @ApiModelProperty(value = "登录账号")
     private String loginName;
 
@@ -51,11 +57,11 @@ public class SysUserLogin implements Serializable {
     @ApiModelProperty(value = "是否有效（0-有效，1-无效）")
     private Integer isValid;
 
-    @ApiModelProperty(value = "用户类型")
+    @ApiModelProperty(value = "用户类型,超级管理员：admin，辅导员：counselor，评审员:reviewers")
     private String userType;
 
     @ApiModelProperty(value = "创建时间")
-    private Date createTime;
+    private LocalDate createTime;
 
 
 }

@@ -107,7 +107,6 @@ public Result selectById(@ApiIgnore @PathVariable Integer id){
 @Transactional(rollbackFor = Exception.class)
 public Result save(@ApiIgnore @RequestBody ${entity} ${table.entityPath}){
     ${table.entityPath}.setIsValid(0);
-    ${table.entityPath}.setCreateTime(new Date());
     ${table.entityPath}Service.save(${table.entityPath});
         return Result.builder().code(200).create();
         }

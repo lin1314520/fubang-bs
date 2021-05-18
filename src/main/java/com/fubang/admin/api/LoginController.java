@@ -101,7 +101,6 @@ public class LoginController {
                 if (ObjectUtil.isEmpty(user)) {
                     user = new SysUserLogin();
                     user.setIsValid(0);
-                    user.setCreateTime(new Date());
                     user.setNickName(userInfo.getString("nickname"));
                     user.setAvatar(userInfo.getString("headimgurl"));
                     user.setUnionId(userInfo.getString("unionid"));

@@ -5,6 +5,8 @@
         <!-- 通用查询映射结果 -->
         <resultMap id="BaseResultMap" type="com.fubang.admin.entity.SysUserLogin">
                     <id column="user_id" property="userId" />
+                    <result column="user_name" property="userName" />
+                    <result column="user_num" property="userNum" />
                     <result column="login_name" property="loginName" />
                     <result column="pass_word" property="passWord" />
                     <result column="avatar" property="avatar" />
@@ -17,7 +19,7 @@
         </resultMap>
         <!-- 通用查询结果列 -->
         <sql id="Base_Column_List">
-        user_id, login_name, pass_word, avatar, union_id, open_id, nick_name, is_valid, user_type, create_time
+        user_id, user_name, user_num, login_name, pass_word, avatar, union_id, open_id, nick_name, is_valid, user_type, create_time
     </sql>
 
 </mapper>

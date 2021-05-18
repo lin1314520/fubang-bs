@@ -95,7 +95,6 @@ public Result selectById(@ApiIgnore @PathVariable Integer id){
 @Transactional(rollbackFor = Exception.class)
 public Result save(@ApiIgnore @RequestBody SysUserLogin sysUserLogin){
     sysUserLogin.setIsValid(0);
-    sysUserLogin.setCreateTime(new Date());
     sysUserLoginService.save(sysUserLogin);
         return Result.builder().code(200).create();
         }
@@ -110,7 +109,7 @@ public Result save(@ApiIgnore @RequestBody SysUserLogin sysUserLogin){
 @Transactional(rollbackFor = Exception.class)
 public Result update(@ApiIgnore @RequestBody SysUserLogin sysUserLogin){
         QueryWrapper<SysUserLogin> query=Wrappers.query();
-        query.eq("id",sysUserLogin.getUserId()).eq("is_valid",0);
+        query.eq("id",sysUserLogin.getId()).eq("is_valid",0);
     SysUserLogin byId= sysUserLoginService.getOne(query);
         //修改字段
 
@@ -118,7 +117,7 @@ public Result update(@ApiIgnore @RequestBody SysUserLogin sysUserLogin){
     sysUserLoginService.updateById(sysUserLogin);
         return Result.builder().code(200).create();
         }
-
+w
 
 /**
 * 根据id删除，逻辑删除
