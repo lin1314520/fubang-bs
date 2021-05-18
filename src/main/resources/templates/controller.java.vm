@@ -1,0 +1,156 @@
+package ${package.Controller};
+import org.springframework.web.bind.annotation.*;
+import io.swagger.annotations.*;
+import com.baomidou.mybatisplus.core.toolkit.StringUtils;
+import springfox.documentation.annotations.ApiIgnore;
+import cn.hutool.json.JSONUtil;
+import cn.hutool.core.util.ObjectUtil;
+import com.baomidou.mybatisplus.core.toolkit.Wrappers;
+    #if(${restControllerStyle})
+    import org.springframework.transaction.annotation.Transactional;
+    import org.springframework.web.bind.annotation.*;
+    #else
+    import org.springframework.stereotype.Controller;
+    import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+    import org.springframework.transaction.annotation.Transactional;
+    #end
+    #if(${superControllerClassPackage})
+    import ${superControllerClassPackage};
+    #end
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.yunmai.weikangshi.consts.Result;
+
+import java.time.LocalDateTime;
+
+import java.util.Date;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.ModelMap;
+import ${package.Service}.${table.serviceName};
+import ${package.Entity}.${entity};
+
+import java.util.Arrays;
+
+/**
+ * $!{table.comment}
+ * @author ${author}
+ * @since ${date}
+ */
+@RestController
+@RequestMapping("/${cfg.mySystem}")
+@Api(tags = "$!{table.comment}")
+#if(${superControllerClass})
+public class ${table.controllerName} extends ${superControllerClass} {
+#else
+public class ${table.controllerName} {
+#end
+
+@Autowired
+public ${table.serviceName} ${table.entityPath}Service;
+
+
+/**
+ * 分页查询
+ * @param page
+ * @param ${table.entityPath}
+ * @return
+ */
+@ApiImplicitParams({
+        @ApiImplicitParam(name = "current", value = "当前页码", required = true, paramType = "query", dataType = "int"),
+        @ApiImplicitParam(name = "size", value = "每页显示条数", required = true, paramType = "query", dataType = "int")
+})
+@ApiResponses({
+        @ApiResponse(code = 200, message = "ok")
+})
+@ApiOperation(value = "分页查询", httpMethod = "GET", notes = "传有参数说明的参数")
+@GetMapping(value = "/${table.entityPath}")
+public Result selectByPage(@ApiIgnore Page<${entity}> page,@ApiIgnore ${entity} ${table.entityPath}){
+        QueryWrapper<${entity}> queryWrapper=new QueryWrapper( ${table.entityPath});
+        queryWrapper.eq("is_valid",0).orderByDesc("create_time");
+        Page<${entity}> pageList=${table.entityPath}Service.page(page,queryWrapper);
+        return Result.builder().code(200).data(pageList).create();
+        }
+
+/**
+    * 单个详细信息查询[根据主键id]
+    * @param data
+    * @return
+    */
+@ApiImplicitParams({
+        @ApiImplicitParam(name = "id", value = "主键id", required = true, paramType = "query", dataType = "int")
+})
+@ApiResponses({
+        @ApiResponse(code = 200, message = "ok")
+})
+@ApiOperation(value = "根据id单个详细信息查询", httpMethod = "GET", notes = "传有参数说明的参数")
+@GetMapping(value = "/selectById/{id}")
+public Result selectById(@ApiIgnore @PathVariable Integer id){
+        try{
+    ${entity} byId= ${table.entityPath}Service.selectById(id);
+        if(ObjectUtil.isNull(byId)){
+        return Result.error(415,"此条数据不存在");
+        }
+        return Result.builder().code(200).data(byId).create();
+        }catch(NumberFormatException e){
+        e.printStackTrace();
+        return Result.error(500,"系统异常");
+        }
+        }
+
+/**
+ * 保存
+ * @param ${table.entityPath}
+ * @return
+ */
+@ApiOperation(value = "新增", httpMethod = "POST", notes = "传有参数说明的参数")
+@PostMapping("/${table.entityPath}")
+@Transactional(rollbackFor = Exception.class)
+public Result save(@ApiIgnore @RequestBody ${entity} ${table.entityPath}){
+    ${table.entityPath}.setIsValid(0);
+    ${table.entityPath}.setCreateTime(new Date());
+    ${table.entityPath}Service.save(${table.entityPath});
+        return Result.builder().code(200).create();
+        }
+
+/**
+ * 修改
+ * @param ${table.entityPath}
+ * @return
+ */
+@ApiOperation(value = "修改", httpMethod = "PUT", notes = "传有参数说明的参数")
+@PutMapping("/${table.entityPath}")
+@Transactional(rollbackFor = Exception.class)
+public Result update(@ApiIgnore @RequestBody ${entity} ${table.entityPath}){
+        QueryWrapper<${entity}> query=Wrappers.query();
+        query.eq("id",${table.entityPath}.getId()).eq("is_valid",0);
+    ${entity} byId= ${table.entityPath}Service.getOne(query);
+        //修改字段
+
+
+    ${table.entityPath}Service.updateById(${table.entityPath});
+        return Result.builder().code(200).create();
+        }
+
+
+/**
+* 根据id删除，逻辑删除
+* @param id
+* @return
+*/
+@ApiOperation(value = "删除", httpMethod = "DELETE", notes = "传有参数说明的参数")
+@DeleteMapping("/${table.entityPath}/{id}")
+@Transactional(rollbackFor = Exception.class)
+public Result deleteById(@PathVariable("id") @ApiParam(name = "id", value = "id", required = true) Integer id){
+        QueryWrapper<${entity}> query=Wrappers.query();
+        query.eq("id",id).eq("is_valid",0);
+    ${entity} ${table.entityPath} = ${table.entityPath}Service.getOne(query);
+        if(ObjectUtil.isNull(${table.entityPath})){
+        return Result.error(405,"此数据已被删除");
+        }
+    ${table.entityPath}.setIsValid(1);
+    ${table.entityPath}Service.updateById(${table.entityPath});
+        return Result.builder().code(200).create();
+        }
+
+
+        }
