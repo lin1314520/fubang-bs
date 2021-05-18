@@ -130,7 +130,7 @@ public Result update(@ApiIgnore @RequestBody ${entity} ${table.entityPath}){
     ${table.entityPath}Service.updateById(${table.entityPath});
         return Result.builder().code(200).create();
         }
-
+w
 
 /**
 * 根据id删除，逻辑删除

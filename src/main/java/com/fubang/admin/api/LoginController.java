@@ -12,6 +12,7 @@ import com.fubang.admin.entity.UserLoginPoJo;
 import com.fubang.admin.entity.SysUserLogin;
 import com.fubang.admin.service.SysUserLoginService;
 import com.fubang.util.AuthUtil;
+import com.fubang.util.HttpRequest;
 import io.swagger.annotations.*;
 import me.chanjar.weixin.mp.bean.result.WxMpUser;
 import org.apache.commons.lang3.StringUtils;
@@ -62,13 +63,13 @@ public class LoginController {
     @PostMapping("/login")
     public Result login(@RequestBody @ApiIgnore UserLoginPoJo userLoginPoJo,
                         HttpServletRequest request) {
-        return wxCodeLogin(userLoginPoJo.getCode(), request, userLoginPoJo.getAccessToken());
+        return wxCodeLogin(userLoginPoJo.getCode(), request);
     }
 
     /**
      * 微信登录
      */
-    public Result wxCodeLogin(String code, HttpServletRequest request, String accessToken) {
+    public Result wxCodeLogin(String code, HttpServletRequest request) {
         WxMpUser wxMpUser = null;
         SysUserLogin user = null;
         Map<String, Object> returnMap = new HashMap<>();
@@ -77,9 +78,11 @@ public class LoginController {
         try {
             // 根据appId 获取授权信息
             //拼接url
-            String url = "https://api.weixin.qq.com/sns/oauth2/access_token?appid=" + appId + "&secret="
-                    + secret + "&code=" + code + "&grant_type=authorization_code";
-            JSONObject jsonObject = AuthUtil.doGetJson(url);
+//            String url = "https://api.weixin.qq.com/sns/oauth2/access_token?appid=" + appId + "&secret="
+//                    + secret + "&code=" + code + "&grant_type=authorization_code";
+            String params = "appid=" + appId + "&secret=" + secret + "&js_code=" + code + "&grant_type=authorization_code" ;
+            String sr = HttpRequest.sendGet("https://api.weixin.qq.com/sns/jscode2session", params);
+            JSONObject jsonObject = AuthUtil.doGetJson(sr);
             //1.获取微信用户的openid
             String openid = jsonObject.getString("openid");
             //2.获取获取access_token
@@ -95,6 +98,16 @@ public class LoginController {
                 //根据openID查询数据库是否已经存在
                 query.eq("open_id", openid).eq("is_valid", 0);
                 user = sysUserLoginService.getOne(query);
+                if (ObjectUtil.isEmpty(user)) {
+                    user = new SysUserLogin();
+                    user.setIsValid(0);
+                    user.setCreateTime(new Date());
+                    user.setNickName(userInfo.getString("nickname"));
+                    user.setAvatar(userInfo.getString("headimgurl"));
+                    user.setUnionId(userInfo.getString("unionid"));
+                    user.setOpenId(userInfo.getString("openid"));
+                    sysUserLoginService.save(user);
+                }
 
             } else {
                 return Result.error(401, "登录失败");
