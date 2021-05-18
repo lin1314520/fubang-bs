@@ -1,8 +1,8 @@
 package com.fubang.admin.service.impl;
 
-import com.fubang.admin.entity.sysUserLogin;
-import com.fubang.admin.mapper.sysUserLoginMapper;
-import com.fubang.admin.service.sysUserLoginService;
+import com.fubang.admin.entity.SysUserLogin;
+import com.fubang.admin.mapper.SysUserLoginMapper;
+import com.fubang.admin.service.SysUserLoginService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,10 +15,10 @@ import org.springframework.transaction.annotation.Transactional;
  */
 @Service
 @Transactional
-public class sysUserLoginServiceImpl extends ServiceImpl<sysUserLoginMapper, sysUserLogin> implements sysUserLoginService {
+public class SysUserLoginServiceImpl extends ServiceImpl<SysUserLoginMapper, SysUserLogin> implements SysUserLoginService {
 
     @Autowired
-    private sysUserLoginMapper sysUserLoginMapper;
+    private SysUserLoginMapper sysUserLoginMapper;
 
     /**
     * @author jcl
@@ -26,7 +26,7 @@ public class sysUserLoginServiceImpl extends ServiceImpl<sysUserLoginMapper, sys
     * @Description //TODO 查询单个的详细信息
     **/
     @Override
-    public sysUserLogin selectById(Integer id) {
+    public SysUserLogin selectById(Integer id) {
             return sysUserLoginMapper.selectById(id);
             }
 

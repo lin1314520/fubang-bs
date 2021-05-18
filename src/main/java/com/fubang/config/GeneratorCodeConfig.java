@@ -17,7 +17,7 @@ public class GeneratorCodeConfig {
     public static void main(String[] args) {
         final String mySystem = "admin";
         final String apiName = "admin/sysUserLogin";
-        final String entityAlias = "sysUserLogin";//实体别名
+        final String entityAlias = "SysUserLogin";//实体别名
         final String tableName = "sys_user_login";//多表用逗号分隔
 
 
@@ -32,7 +32,7 @@ public class GeneratorCodeConfig {
         gc.setOpen(false);
         gc.setEntityName(entityAlias);
         gc.setMapperName(entityAlias + "Mapper");
-        gc.setFileOverride(false);//第二次生成不会把第一次生成的覆盖掉,默认为false
+        gc.setFileOverride(true);//第二次生成不会把第一次生成的覆盖掉,默认为false
 //        gc.setBaseResultMap(true); //生成resultMap
 //        gc.setXmlName(entityAlias);//此处不生效,自定义配置会覆盖本配置
 //         gc.setServiceName("%sService");//生成的service接口名字首字母是否为I，这样设置就没有

@@ -1,10 +1,10 @@
-package com.yunmai.weikangshi.weikangshi;
+package com.yunmai;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class WeikangshiApplicationTests {
+class FuBangApplicationTests {
 
     @Test
     void contextLoads() {

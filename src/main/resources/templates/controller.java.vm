@@ -18,7 +18,7 @@ import com.baomidou.mybatisplus.core.toolkit.Wrappers;
     import ${superControllerClassPackage};
     #end
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.yunmai.weikangshi.consts.Result;
+import com.fubang.admin.entity.Result;
 
 import java.time.LocalDateTime;
 
@@ -73,7 +73,7 @@ public Result selectByPage(@ApiIgnore Page<${entity}> page,@ApiIgnore ${entity} 
 
 /**
     * 单个详细信息查询[根据主键id]
-    * @param data
+    * @param
     * @return
     */
 @ApiImplicitParams({

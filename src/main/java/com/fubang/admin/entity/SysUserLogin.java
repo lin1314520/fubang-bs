@@ -10,6 +10,7 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
+import java.util.Date;
 
 /**
  * 登录用户表
@@ -20,8 +21,8 @@ import lombok.experimental.Accessors;
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
 @TableName("sys_user_login")
-@ApiModel(value="sysUserLogin对象", description="登录用户表")
-public class sysUserLogin implements Serializable {
+@ApiModel(value="SysUserLogin对象", description="登录用户表")
+public class SysUserLogin implements Serializable {
 
     private static final long serialVersionUID=1L;
 
@@ -35,11 +36,26 @@ public class sysUserLogin implements Serializable {
     @ApiModelProperty(value = "登录密码")
     private String passWord;
 
+    @ApiModelProperty(value = "头像")
+    private String avatar;
+
+    @ApiModelProperty(value = "联合id")
+    private String unionId;
+
+    @ApiModelProperty(value = "微信openId")
+    private String openId;
+
+    @ApiModelProperty(value = "昵称")
+    private String nickName;
+
     @ApiModelProperty(value = "是否有效（0-有效，1-无效）")
     private Integer isValid;
 
+    @ApiModelProperty(value = "用户类型")
+    private String userType;
+
     @ApiModelProperty(value = "创建时间")
-    private LocalDate createTime;
+    private Date createTime;
 
 
 }

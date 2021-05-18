@@ -1,6 +1,6 @@
 package com.fubang.admin.mapper;
 
-import com.fubang.admin.entity.sysUserLogin;
+import com.fubang.admin.entity.SysUserLogin;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
@@ -8,6 +8,6 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @author jcl
  * @since 2021-05-18
  */
-public interface sysUserLoginMapper extends BaseMapper<sysUserLogin> {
+public interface SysUserLoginMapper extends BaseMapper<SysUserLogin> {
 
 }

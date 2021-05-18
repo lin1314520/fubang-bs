@@ -3,14 +3,19 @@ package com.fubang.admin.api;
 import cn.hutool.core.util.IdUtil;
 import cn.hutool.core.util.ObjectUtil;
 import com.alibaba.fastjson.JSONObject;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.ObjectUtils;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.fubang.admin.entity.Result;
+import com.fubang.admin.entity.SysUserLogin;
 import com.fubang.admin.entity.UserLoginPoJo;
+import com.fubang.admin.entity.SysUserLogin;
+import com.fubang.admin.service.SysUserLoginService;
 import com.fubang.util.AuthUtil;
 import io.swagger.annotations.*;
 import me.chanjar.weixin.mp.bean.result.WxMpUser;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -40,7 +45,8 @@ public class LoginController {
 
     @Value("${wx.mp.configs.secret}")
     private String secret;
-
+    @Autowired
+    public SysUserLoginService sysUserLoginService;
 
     /**
      * 微信授权登录
@@ -64,6 +70,7 @@ public class LoginController {
      */
     public Result wxCodeLogin(String code, HttpServletRequest request, String accessToken) {
         WxMpUser wxMpUser = null;
+        SysUserLogin user = null;
         Map<String, Object> returnMap = new HashMap<>();
         //根据token验证token
         //如果redis中不存在token
@@ -84,7 +91,10 @@ public class LoginController {
 //            判断是否有微信授权登录的open_id。
             if (ObjectUtil.isNotNull(userInfo.getString("openid")) || ObjectUtil.isNotEmpty(userInfo.getString("openid"))) {
                 //查询用户信息
-//                user = wxUserService.getOne(query);
+                QueryWrapper<SysUserLogin> query = Wrappers.query();
+                //根据openID查询数据库是否已经存在
+                query.eq("open_id", openid).eq("is_valid", 0);
+                user = sysUserLoginService.getOne(query);
 
             } else {
                 return Result.error(401, "登录失败");
@@ -101,21 +111,8 @@ public class LoginController {
 
         Map<String, Object> returnMap = new HashMap<>();
 
-//        WxUser byId = new WxUser();
-//        String token;
-//
-//        if (ObjectUtil.isNull(user.getOpenId()) || ObjectUtil.isEmpty(user.getOpenId())) {
-//            return Result.error(401, "登录失败");
-//        }
-
-//        token = IdUtil.simpleUUID();
-//        redisService.set(token, new LoginUser(user.getId(), user.getUserName(), token, 1), 0);
-//        byId = wxUserService.getById(user.getId());
-
-
         returnMap.put("value", true);
         returnMap.put("message", "登录成功");
-//        returnMap.put("userInfo", byId);
         return Result.success(returnMap);
     }
 

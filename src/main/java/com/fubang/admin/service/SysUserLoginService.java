@@ -1,6 +1,6 @@
 package com.fubang.admin.service;
 
-import com.fubang.admin.entity.sysUserLogin;
+import com.fubang.admin.entity.SysUserLogin;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 
@@ -9,7 +9,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @author jcl
  * @since 2021-05-18
  */
-public interface sysUserLoginService extends IService<sysUserLogin> {
+public interface SysUserLoginService extends IService<SysUserLogin> {
 
-    sysUserLogin selectById(Integer id);
+    SysUserLogin selectById(Integer id);
 }
