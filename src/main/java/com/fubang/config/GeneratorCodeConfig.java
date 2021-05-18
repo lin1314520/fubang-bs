@@ -16,9 +16,9 @@ import java.util.Map;
 public class GeneratorCodeConfig {
     public static void main(String[] args) {
         final String mySystem = "admin";
-        final String apiName = "admin/AdminRoleInterface";
-        final String entityAlias = "AdminRoleInterface";//实体别名
-        final String tableName = "admin_role_interface";//多表用逗号分隔
+        final String apiName = "admin/sysUserLogin";
+        final String entityAlias = "sysUserLogin";//实体别名
+        final String tableName = "sys_user_login";//多表用逗号分隔
 
 
         // 代码生成器
@@ -28,7 +28,7 @@ public class GeneratorCodeConfig {
         GlobalConfig gc = new GlobalConfig();
         String projectPath = System.getProperty("user.dir");
         gc.setOutputDir(projectPath + "/src/main/java");//生成路径(一般都是生成在此项目的src/main/java下面)
-        gc.setAuthor("jiangchanglin"); //设置作者
+        gc.setAuthor("jcl"); //设置作者
         gc.setOpen(false);
         gc.setEntityName(entityAlias);
         gc.setMapperName(entityAlias + "Mapper");
@@ -44,19 +44,19 @@ public class GeneratorCodeConfig {
 
         // 数据源配置
         DataSourceConfig dsc = new DataSourceConfig();
-        dsc.setUrl("jdbc:mysql://43.128.63.111:3306/weikangshi?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=GMT%2B8");
+        dsc.setUrl("jdbc:mysql://127.0.0.1:3306/froms_three2?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=GMT%2B8");
         // dsc.setSchemaName("public");
         dsc.setDbType(DbType.MYSQL);
         dsc.setDriverName("com.mysql.jdbc.Driver");
-        dsc.setUsername("weikangshi");
-        dsc.setPassword("");
+        dsc.setUsername("root");
+        dsc.setPassword("root");
         mpg.setDataSource(dsc);
 
         // 包配置
         PackageConfig pc = new PackageConfig();
         //scanner("模块名")
         pc.setModuleName(mySystem);
-        pc.setParent("com.yunmai.weikangshi");
+        pc.setParent("com.fubang");
         mpg.setPackageInfo(pc);
 
         // 自定义配置

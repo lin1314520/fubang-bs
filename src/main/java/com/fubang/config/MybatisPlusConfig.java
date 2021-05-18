@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * @auth Leiwenlong
+ * @auth lwl
  * @since 2021/1/26
  */
 @Configuration

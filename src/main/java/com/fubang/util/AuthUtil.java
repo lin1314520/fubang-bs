@@ -11,7 +11,7 @@ import org.apache.http.util.EntityUtils;
 import java.io.IOException;
 
 /**
- * @auth Leiwenlong
+ * @auth lwl
  * @since 2021/3/25
  */
 public class AuthUtil {
