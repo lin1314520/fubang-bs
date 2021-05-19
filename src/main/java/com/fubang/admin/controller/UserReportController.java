@@ -197,12 +197,17 @@ public class UserReportController {
     }
 
     //防止文件重名，重命名
+    private String getNewName2(String oldName) {
+        UUID uuid = UUID.randomUUID();
+        String newName = uuid + oldName;
+        return newName;
+    }
+    //防止文件重名，重命名
     private String getNewName(String oldName) {
         UUID uuid = UUID.randomUUID();
         String newName = uuid + oldName.substring(oldName.lastIndexOf("."));
         return newName;
     }
-
     /**
      * 下载
      *
@@ -248,12 +253,13 @@ public class UserReportController {
 
         // 模板填充
         XWPFDocument doc = WordUtil.generateWord(paramMap, template);
-        String newName = this.getNewName("A");
-        FileOutputStream fopts = new FileOutputStream("C:\\Users\\g1121\\Desktop\\"+newName);
+        String newName = this.getNewName2("A");
+        String s = "C:\\Users\\g1121\\Desktop\\" + newName+".doc";
+        FileOutputStream fopts = new FileOutputStream(s);
         doc.write(fopts);
         fopts.close();
 
-        returnData.put("",fopts);
+        returnData.put("pathUrl",s);
         return Result.builder().code(200).data(returnData).create();
     }
 

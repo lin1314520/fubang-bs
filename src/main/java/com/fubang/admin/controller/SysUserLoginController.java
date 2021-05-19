@@ -22,6 +22,7 @@ import org.springframework.ui.ModelMap;
 import com.fubang.admin.service.SysUserLoginService;
 import com.fubang.admin.entity.SysUserLogin;
 
+import javax.websocket.server.PathParam;
 import java.util.Arrays;
 
 /**
@@ -90,6 +91,25 @@ public class SysUserLoginController {
     }
 
     /**
+     * 单个详细信息查询[根据主键id]
+     *
+     * @param
+     * @return
+     */
+    //登录接口
+    @GetMapping("/login")
+    public Result login( @ApiIgnore SysUserLogin sysUserLogin) {
+        QueryWrapper<SysUserLogin> queryWrapper = new QueryWrapper(sysUserLogin);
+        queryWrapper.eq("is_valid", 0).orderByDesc("create_time");
+        Integer count= sysUserLoginService.count(queryWrapper);
+        if(count ==1) {
+            return Result.builder().code(200).message("登录成功").create();
+        }else{
+            return Result.builder().code(415).message("登录失败").create();
+        }
+    }
+
+    /**
      * 保存
      *
      * @param sysUserLogin
@@ -115,7 +135,7 @@ public class SysUserLoginController {
     @Transactional(rollbackFor = Exception.class)
     public Result update(@ApiIgnore @RequestBody SysUserLogin sysUserLogin) {
         QueryWrapper<SysUserLogin> query = Wrappers.query();
-        query.eq("id", sysUserLogin.getUserId()).eq("is_valid", 0);
+        query.eq("user_id", sysUserLogin.getUserId()).eq("is_valid", 0);
         SysUserLogin byId = sysUserLoginService.getOne(query);
         //修改字段
 

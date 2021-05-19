@@ -61,7 +61,7 @@ public class SysUserLogin implements Serializable {
     private String userType;
 
     @ApiModelProperty(value = "创建时间")
-    private LocalDate createTime;
+    private Date createTime;
 
 
 }

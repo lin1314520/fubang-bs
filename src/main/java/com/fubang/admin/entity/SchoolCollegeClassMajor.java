@@ -43,7 +43,7 @@ public class SchoolCollegeClassMajor implements Serializable {
     private String dataType;
 
     @ApiModelProperty(value = "创建时间")
-    private LocalDateTime createTime;
+    private Date createTime;
 
 
 }

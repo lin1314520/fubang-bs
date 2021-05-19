@@ -40,7 +40,7 @@ public class SchoolUnionUser implements Serializable {
     private Integer isValid;
 
     @ApiModelProperty(value = "创建时间")
-    private LocalDateTime createTime;
+    private Date createTime;
 
 
 }
