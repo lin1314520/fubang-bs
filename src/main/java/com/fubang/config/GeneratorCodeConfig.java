@@ -16,9 +16,9 @@ import java.util.Map;
 public class GeneratorCodeConfig {
     public static void main(String[] args) {
         final String mySystem = "admin";
-        final String apiName = "admin/sysUserLogin";
-        final String entityAlias = "SysUserLogin";//实体别名
-        final String tableName = "sys_user_login";//多表用逗号分隔
+        final String apiName = "admin/SchoolCollegeClassMajor";
+        final String entityAlias = "SchoolCollegeClassMajor";//实体别名
+        final String tableName = "school_college_class_major";//多表用逗号分隔
 
 
         // 代码生成器
