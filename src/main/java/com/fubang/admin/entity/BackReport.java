@@ -43,7 +43,11 @@ public class BackReport implements Serializable {
     private Integer isValid;
 
     @ApiModelProperty(value = "创建时间")
-    private LocalDateTime createTime;
+    private Date createTime;
+
+
+    @ApiModelProperty(value = "推送状态1-推送 2-未推送")
+    private Integer pushStatus;
 
 
 }
