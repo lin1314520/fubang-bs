@@ -24,6 +24,7 @@ import com.fubang.admin.entity.SysUserLogin;
 
 import javax.websocket.server.PathParam;
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * 登录用户表
@@ -98,13 +99,14 @@ public class SysUserLoginController {
      */
     //登录接口
     @GetMapping("/login")
-    public Result login( @ApiIgnore SysUserLogin sysUserLogin) {
+    public Result login(@ApiIgnore SysUserLogin sysUserLogin) {
         QueryWrapper<SysUserLogin> queryWrapper = new QueryWrapper(sysUserLogin);
         queryWrapper.eq("is_valid", 0).orderByDesc("create_time");
-        Integer count= sysUserLoginService.count(queryWrapper);
-        if(count ==1) {
-            return Result.builder().code(200).message("登录成功").create();
-        }else{
+        Integer count = sysUserLoginService.count(queryWrapper);
+        List<SysUserLogin> list = sysUserLoginService.list(queryWrapper);
+        if (count == 1) {
+            return Result.builder().code(200).data(list.get(0).getUserType()).message("登录成功").create();
+        } else {
             return Result.builder().code(415).message("登录失败").create();
         }
     }
