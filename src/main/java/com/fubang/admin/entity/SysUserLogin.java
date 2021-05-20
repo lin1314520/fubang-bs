@@ -1,10 +1,13 @@
 package com.fubang.admin.entity;
 
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;
 import java.time.LocalDate;
 import com.baomidou.mybatisplus.annotation.TableId;
 import java.io.Serializable;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -63,8 +66,12 @@ public class SysUserLogin implements Serializable {
     @ApiModelProperty(value = "用户类型,超级管理员：admin，辅导员：counselor，评审员:reviewers")
     private String userType;
 
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     @ApiModelProperty(value = "创建时间")
     private Date createTime;
+
+    @TableField(exist = false)
+    private  String reportCredit;
 
 
 }

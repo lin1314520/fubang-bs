@@ -3,6 +3,8 @@ package com.fubang.admin.service;
 import com.fubang.admin.entity.SysUserLogin;
 import com.baomidou.mybatisplus.extension.service.IService;
 
+import java.util.List;
+
 
 /**
  * 登录用户表 服务类
@@ -12,4 +14,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface SysUserLoginService extends IService<SysUserLogin> {
 
     SysUserLogin selectById(Integer id);
+
+    List<SysUserLogin> listData(List<SysUserLogin> records);
 }

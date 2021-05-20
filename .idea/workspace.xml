@@ -2,36 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="57131612-2b5f-4046-97a8-7ae666af0c64" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_bouncycastle_bcprov_jdk15on_1_60.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/fubang/admin/controller/BackReportController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/fubang/admin/entity/BackReport.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/fubang/admin/mapper/BackReportMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/fubang/admin/service/BackReportService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/fubang/admin/service/impl/BackReportServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mybatis/BackReportMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/application-dev.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/application-prod.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/log4j.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/logback-spring.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mybatis/BackReportMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mybatis/SchoolCollegeClassMajorMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mybatis/SchoolUnionUserMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mybatis/UserReportMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mybatis/sysUserLoginMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/controller.java.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/entity.java.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/mapper.java.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/mapper.xml.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/service.java.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/serviceImpl.java.vm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fubang/config/AES256Encryption.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fubang.iml" beforeDir="false" afterPath="$PROJECT_DIR$/fubang.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fubang/admin/controller/SysUserLoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fubang/admin/controller/SysUserLoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fubang/admin/entity/BackReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fubang/admin/entity/BackReport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fubang/admin/entity/SchoolCollegeClassMajor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fubang/admin/entity/SchoolCollegeClassMajor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fubang/admin/entity/SchoolUnionUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fubang/admin/entity/SchoolUnionUser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/fubang/admin/entity/SysUserLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fubang/admin/entity/SysUserLogin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fubang/config/GeneratorCodeConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fubang/config/GeneratorCodeConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fubang/config/SwggerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fubang/config/SwggerConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis/sysUserLoginMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis/sysUserLoginMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fubang/admin/entity/UserReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fubang/admin/entity/UserReport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fubang/admin/service/SysUserLoginService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fubang/admin/service/SysUserLoginService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fubang/admin/service/impl/SysUserLoginServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fubang/admin/service/impl/SysUserLoginServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mybatis/BackReportMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mybatis/BackReportMapper.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -50,37 +31,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/fubang/config/GeneratorCodeConfig.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/fubang/admin/service/impl/SysUserLoginServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="25" selection-start-line="25" selection-end-line="25" />
+            <state relative-caret-position="418">
+              <caret line="50" column="21" lean-forward="true" selection-start-line="50" selection-start-column="21" selection-end-line="50" selection-end-column="21" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/fubang/FuBangApplication.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/fubang/admin/entity/SysUserLogin.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="17" selection-start-line="17" selection-end-line="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/fubang/config/SwggerConfig.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="245">
-              <caret line="56" column="7" selection-start-line="56" selection-start-column="7" selection-end-line="56" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/fubang/admin/controller/SysUserLoginController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="269">
-              <caret line="102" column="25" selection-start-line="102" selection-start-column="25" selection-end-line="102" selection-end-column="25" />
+            <state relative-caret-position="897">
+              <caret line="67" selection-start-line="67" selection-end-line="67" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -89,19 +52,37 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/fubang/admin/entity/SchoolCollegeClassMajor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3014">
-              <caret line="137" column="21" selection-start-line="137" selection-start-column="21" selection-end-line="137" selection-end-column="21" />
+            <state relative-caret-position="369">
+              <caret line="45" selection-start-line="45" selection-end-line="45" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/fubang/admin/entity/SysUserLogin.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/fubang/admin/entity/Result.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="337">
-              <caret line="60" column="27" selection-start-line="60" selection-start-column="20" selection-end-line="60" selection-end-column="27" />
+            <state relative-caret-position="264">
+              <caret line="16" column="11" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/fubang/admin/entity/GlobalConsts.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="110">
+              <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/fubang/admin/entity/ExportDocDTO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-225">
+              <caret line="15" column="18" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -110,10 +91,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/sysUserLoginMapper.xml">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/fubang/admin/entity/BackReport.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="15" column="67" lean-forward="true" selection-start-line="15" selection-start-column="67" selection-end-line="15" selection-end-column="67" />
+            <state relative-caret-position="545">
+              <caret line="45" column="4" selection-start-line="45" selection-start-column="4" selection-end-line="45" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -121,17 +102,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/fubang/admin/entity/SchoolUnionUser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="506">
-              <caret line="33" column="26" selection-start-line="33" selection-start-column="20" selection-end-line="33" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/fubang/admin/entity/SchoolCollegeClassMajor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="682">
-              <caret line="41" column="76" selection-start-line="41" selection-start-column="71" selection-end-line="41" selection-end-column="76" />
+            <state relative-caret-position="369">
+              <caret line="42" selection-start-line="42" selection-end-line="42" />
             </state>
           </provider>
         </entry>
@@ -139,8 +111,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/fubang/admin/entity/UserReport.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1012">
-              <caret line="56" column="37" selection-start-line="56" selection-start-column="37" selection-end-line="56" selection-end-column="37" />
+            <state relative-caret-position="391">
+              <caret line="64" column="68" selection-start-line="64" selection-start-column="68" selection-end-line="64" selection-end-column="68" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/fubang/admin/entity/UserLoginPoJo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="88">
+              <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -163,6 +144,7 @@
       <find>spring-core</find>
       <find>@author zhgq</find>
       <find>··</find>
+      <find>encryptedDataByte</find>
     </findStrings>
     <replaceStrings>
       <replace>lwl</replace>
@@ -187,20 +169,24 @@
         <option value="$PROJECT_DIR$/src/main/java/com/fubang/util/WordUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/fubang/admin/entity/ExportDocDTO.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/yunmai/FuBangApplicationTests.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/fubang/admin/entity/UserReport.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/fubang/admin/entity/SchoolCollegeClassMajor.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/fubang/admin/entity/SchoolUnionUser.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/fubang/admin/controller/UserReportController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/fubang/admin/controller/SysUserLoginController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/fubang/config/WebConfig.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/fubang/config/sign.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/fubang/config/EncryptionUtils.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/fubang/config/AES256Encryption.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/fubang/config/GeneratorCodeConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/fubang/config/SwggerConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/fubang/admin/entity/SysUserLogin.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mybatis/sysUserLoginMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/mybatis/BackReportMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/fubang/config/AES256Encryption.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/fubang/admin/controller/SysUserLoginController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/fubang/admin/service/SysUserLoginService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/fubang/admin/service/impl/SysUserLoginServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/fubang/admin/entity/UserReport.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/fubang/admin/entity/SysUserLogin.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/fubang/admin/entity/SchoolUnionUser.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/fubang/admin/entity/SchoolCollegeClassMajor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/fubang/admin/entity/BackReport.java" />
       </list>
     </option>
   </component>
@@ -237,8 +223,8 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-12" />
-    <option name="y" value="-12" />
+    <option name="x" value="1062" />
+    <option name="y" value="58" />
     <option name="width" value="3870" />
     <option name="height" value="2190" />
   </component>
@@ -247,6 +233,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -408,44 +396,12 @@
             </path>
             <path>
               <item name="fubang" type="b2602c69:ProjectViewProjectNode" />
-              <item name="fubang-bs" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="fubang" type="b2602c69:ProjectViewProjectNode" />
-              <item name="fubang-bs" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="fubang" type="b2602c69:ProjectViewProjectNode" />
-              <item name="fubang-bs" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="fubang" type="b2602c69:ProjectViewProjectNode" />
-              <item name="fubang-bs" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="yunmai" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="fubang" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -561,8 +517,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.GeneratorCodeConfig" />
         <item itemvalue="Application.AES256Encryption" />
+        <item itemvalue="Application.GeneratorCodeConfig" />
         <item itemvalue="Application.sign" />
         <item itemvalue="JUnit.FuBangApplicationTests.contextLoads" />
       </list>
@@ -586,7 +542,8 @@
       <workItem from="1621472495205" duration="5490000" />
       <workItem from="1621492756446" duration="4482000" />
       <workItem from="1621499667141" duration="2025000" />
-      <workItem from="1621501890182" duration="434000" />
+      <workItem from="1621501890182" duration="2934000" />
+      <workItem from="1621507966312" duration="2499000" />
     </task>
     <task id="LOCAL-00001" summary="搭建">
       <created>1621328727516</created>
@@ -679,7 +636,21 @@
       <option name="project" value="LOCAL" />
       <updated>1621471669831</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="搭建13">
+      <created>1621502386932</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1621502386932</updated>
+    </task>
+    <task id="LOCAL-00015" summary="搭建14">
+      <created>1621503248623</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1621503248623</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -691,13 +662,13 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27015000" />
+    <option name="totallyTimeSpent" value="32014000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1933" height="1063" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26826668" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27093333" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="JRebel" order="3" side_tool="true" />
@@ -708,8 +679,8 @@
       <window_info id="Web" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.26609442" />
-      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.277897" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.2671674" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.31223175" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -795,7 +766,9 @@
     <MESSAGE value="搭建10" />
     <MESSAGE value="搭建11" />
     <MESSAGE value="搭建12" />
-    <option name="LAST_COMMIT_MESSAGE" value="搭建12" />
+    <MESSAGE value="搭建13" />
+    <MESSAGE value="搭建14" />
+    <option name="LAST_COMMIT_MESSAGE" value="搭建14" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -824,31 +797,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fubang/admin/service/SysUserLoginService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fubang/admin/service/impl/SysUserLoginServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="13" column="20" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/entity.java.vm">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="242">
           <caret line="11" column="32" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fubang/admin/entity/UserLoginPoJo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -929,16 +881,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fubang/admin/entity/ExportDocDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="15" column="18" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/application-prod.yml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -947,13 +889,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/UserReportMapper.xml">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fubang/admin/controller/UserReportController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="155" column="38" selection-start-line="155" selection-start-column="38" selection-end-line="155" selection-end-column="38" />
-        </state>
-      </provider>
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/apache-maven-3.5.4/repository/com/baomidou/mybatis-plus-extension/3.4.1/mybatis-plus-extension-3.4.1.jar!/com/baomidou/mybatisplus/extension/service/IService.class">
       <provider selected="true" editor-type-id="text-editor">
@@ -969,13 +904,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fubang/admin/entity/Result.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="16" column="11" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
         </state>
       </provider>
     </entry>
@@ -1010,30 +938,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fubang/config/EncryptionUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="26" selection-start-column="26" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fubang/config/EncryptionUtils.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/fubang/config/WebConfig.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="308">
           <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fubang/config/AES256Encryption.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2596">
-          <caret line="127" column="32" selection-start-line="127" selection-start-column="32" selection-end-line="127" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1058,27 +967,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fubang/admin/entity/SchoolUnionUser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="33" column="26" selection-start-line="33" selection-start-column="20" selection-end-line="33" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fubang/admin/entity/SchoolCollegeClassMajor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="682">
-          <caret line="41" column="76" selection-start-line="41" selection-start-column="71" selection-end-line="41" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fubang/admin/entity/UserReport.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1012">
-          <caret line="56" column="37" selection-start-line="56" selection-start-column="37" selection-end-line="56" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/apache-maven-3.5.4/repository/org/hzero/starter/hzero-starter-core/1.5.1.RELEASE/hzero-starter-core-1.5.1.RELEASE.jar!/io/choerodon/swagger/exclude/Swagger2HandDocumentationConfiguration.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="186">
@@ -1088,35 +976,133 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/fubang/config/SwggerConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
+        <state relative-caret-position="1056">
           <caret line="56" column="7" selection-start-line="56" selection-start-column="7" selection-end-line="56" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fubang/admin/controller/SysUserLoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="102" column="25" selection-start-line="102" selection-start-column="25" selection-end-line="102" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fubang/admin/entity/SysUserLogin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
-          <caret line="60" column="27" selection-start-line="60" selection-start-column="20" selection-end-line="60" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/sysUserLoginMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
-          <caret line="15" column="67" lean-forward="true" selection-start-line="15" selection-start-column="67" selection-end-line="15" selection-end-column="67" />
+          <caret line="15" column="67" selection-start-line="15" selection-start-column="67" selection-end-line="15" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/BackReportMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="12" column="73" selection-start-line="12" selection-start-column="73" selection-end-line="12" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fubang/config/AES256Encryption.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2675">
+          <caret line="169" column="58" lean-forward="true" selection-start-line="169" selection-start-column="58" selection-end-line="169" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fubang/admin/controller/UserReportController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="62" column="52" selection-start-line="62" selection-start-column="52" selection-end-line="62" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fubang/admin/controller/BackReportController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="54" column="47" selection-start-line="54" selection-start-column="47" selection-end-line="54" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fubang/admin/service/SysUserLoginService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="17" column="10" lean-forward="true" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fubang/admin/controller/SysUserLoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="62" column="69" selection-start-line="62" selection-start-column="69" selection-end-line="62" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fubang/admin/service/impl/SysUserLoginServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="50" column="21" lean-forward="true" selection-start-line="50" selection-start-column="21" selection-end-line="50" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fubang/admin/entity/UserReport.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="64" column="68" selection-start-line="64" selection-start-column="68" selection-end-line="64" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fubang/admin/entity/UserLoginPoJo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fubang/admin/entity/SysUserLogin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="897">
+          <caret line="67" selection-start-line="67" selection-end-line="67" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fubang/admin/entity/SchoolUnionUser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="369">
+          <caret line="42" selection-start-line="42" selection-end-line="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fubang/admin/entity/SchoolCollegeClassMajor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="369">
+          <caret line="45" selection-start-line="45" selection-end-line="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fubang/admin/entity/Result.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="16" column="11" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fubang/admin/entity/GlobalConsts.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fubang/admin/entity/ExportDocDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-225">
+          <caret line="15" column="18" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fubang/admin/entity/BackReport.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="545">
+          <caret line="45" column="4" selection-start-line="45" selection-start-column="4" selection-end-line="45" selection-end-column="4" />
         </state>
       </provider>
     </entry>

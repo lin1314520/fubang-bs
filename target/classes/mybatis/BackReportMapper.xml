@@ -10,10 +10,11 @@
                     <result column="msg_type" property="msgType" />
                     <result column="is_valid" property="isValid" />
                     <result column="create_time" property="createTime" />
+                    <result column="push_status" property="pushStatus" />
         </resultMap>
         <!-- 通用查询结果列 -->
         <sql id="Base_Column_List">
-        id, user_id, back_msg, msg_type, is_valid, create_time
+        id, user_id, back_msg, msg_type, is_valid, create_time,push_status
     </sql>
 
 </mapper>

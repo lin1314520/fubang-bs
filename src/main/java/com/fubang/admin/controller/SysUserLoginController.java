@@ -15,7 +15,7 @@ import com.fubang.admin.entity.Result;
 
 import java.time.LocalDateTime;
 
-import java.util.Date;
+import java.util.*;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.ModelMap;
@@ -23,8 +23,6 @@ import com.fubang.admin.service.SysUserLoginService;
 import com.fubang.admin.entity.SysUserLogin;
 
 import javax.websocket.server.PathParam;
-import java.util.Arrays;
-import java.util.List;
 
 /**
  * 登录用户表
@@ -58,10 +56,14 @@ public class SysUserLoginController {
     @ApiOperation(value = "分页查询", httpMethod = "GET", notes = "传有参数说明的参数")
     @GetMapping(value = "/sysUserLogin")
     public Result selectByPage(@ApiIgnore Page<SysUserLogin> page, @ApiIgnore SysUserLogin sysUserLogin) {
+        Map<String,Object> retrunMap= new HashMap<>();
         QueryWrapper<SysUserLogin> queryWrapper = new QueryWrapper(sysUserLogin);
         queryWrapper.eq("is_valid", 0).orderByDesc("create_time");
         Page<SysUserLogin> pageList = sysUserLoginService.page(page, queryWrapper);
-        return Result.builder().code(200).data(pageList).create();
+        List<SysUserLogin> returnDataList = sysUserLoginService.listData(page.getRecords());
+        retrunMap.put("pageList",pageList);
+        retrunMap.put("returnDataList",returnDataList);
+        return Result.builder().code(200).data(retrunMap).create();
     }
 
     /**
