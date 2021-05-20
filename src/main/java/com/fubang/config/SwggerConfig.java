@@ -18,19 +18,19 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableSwagger2
 public class SwggerConfig {
 
-    @Bean
-    public Docket api() {
-        return new Docket(DocumentationType.SWAGGER_2)
-                .select()
-                //这里指定Controller扫描包路径
-                .apis(RequestHandlerSelectors.any())
-                .paths(PathSelectors.ant("/api/**"))
-                .build()
-                //分组名称
-                .groupName("卫康士前台API")
-                .pathMapping("/")
-                .apiInfo(apiInfo());
-    }
+//    @Bean
+//    public Docket api() {
+//        return new Docket(DocumentationType.SWAGGER_2)
+//                .select()
+//                //这里指定Controller扫描包路径
+//                .apis(RequestHandlerSelectors.any())
+//                .paths(PathSelectors.ant("/api/**"))
+//                .build()
+//                //分组名称
+//                .groupName("卫康士前台API")
+//                .pathMapping("/")
+//                .apiInfo(apiInfo());
+//    }
 
     @Bean
     public Docket admin_api() {
@@ -43,25 +43,25 @@ public class SwggerConfig {
                 .pathMapping("/")
                 .apiInfo(adminApiInfo());
     }
+//
+//    @Bean
+//    public Docket ops_api() {
+//        return new Docket(DocumentationType.SWAGGER_2)
+//                .select()
+//                .apis(RequestHandlerSelectors.any())
+//                .paths(PathSelectors.ant("/ops/**"))
+//                .build()
+//                .groupName("卫康士门诊后台API")
+//                .pathMapping("/")
+//                .apiInfo(adminApiInfo());
+//    }
 
-    @Bean
-    public Docket ops_api() {
-        return new Docket(DocumentationType.SWAGGER_2)
-                .select()
-                .apis(RequestHandlerSelectors.any())
-                .paths(PathSelectors.ant("/ops/**"))
-                .build()
-                .groupName("卫康士门诊后台API")
-                .pathMapping("/")
-                .apiInfo(adminApiInfo());
-    }
-
-    private ApiInfo opsApiInfo() {
+/*    private ApiInfo opsApiInfo() {
         return new ApiInfoBuilder()
                 .title("卫康士门诊后台API文档")
                 .version("1.0.0")
                 .build();
-    }
+    }*/
 
     private ApiInfo adminApiInfo() {
         return new ApiInfoBuilder()
@@ -70,10 +70,10 @@ public class SwggerConfig {
                 .build();
     }
 
-    private ApiInfo apiInfo() {
+/*    private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
                 .title("卫康士用户API文档")
                 .version("1.0.0")
                 .build();
-    }
+    }*/
 }

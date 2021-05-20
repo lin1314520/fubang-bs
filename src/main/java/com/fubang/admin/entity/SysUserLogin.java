@@ -57,6 +57,9 @@ public class SysUserLogin implements Serializable {
     @ApiModelProperty(value = "是否有效（0-有效，1-无效）")
     private Integer isValid;
 
+    @ApiModelProperty(value = "班级Id")
+    private Integer classId;
+
     @ApiModelProperty(value = "用户类型,超级管理员：admin，辅导员：counselor，评审员:reviewers")
     private String userType;
 
