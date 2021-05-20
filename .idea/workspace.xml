@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="57131612-2b5f-4046-97a8-7ae666af0c64" name="Default Changelist" comment="搭建10">
+    <list default="true" id="57131612-2b5f-4046-97a8-7ae666af0c64" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/doc/Postman Echo.postman_collection.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/froms_three2.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fubang/admin/controller/SysUserLoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fubang/admin/controller/SysUserLoginController.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -22,15 +23,6 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/fubang/admin/controller/UserReportController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="155" column="38" selection-start-line="155" selection-start-column="38" selection-end-line="155" selection-end-column="38" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/fubang/admin/api/LoginController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="22">
@@ -42,7 +34,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/fubang/admin/controller/SysUserLoginController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="198">
@@ -50,6 +42,15 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/fubang/config/WebConfig.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="154">
+              <caret line="9" column="56" lean-forward="true" selection-start-line="9" selection-start-column="56" selection-end-line="9" selection-end-column="56" />
             </state>
           </provider>
         </entry>
@@ -204,7 +205,8 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-26" />
+    <option name="x" value="1252" />
+    <option name="y" value="24" />
     <option name="width" value="3870" />
     <option name="height" value="2190" />
   </component>
@@ -219,6 +221,11 @@
             <path>
               <item name="fubang" type="b2602c69:ProjectViewProjectNode" />
               <item name="fubang-bs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="fubang" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fubang-bs" type="462c0819:PsiDirectoryNode" />
+              <item name="doc" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="fubang" type="b2602c69:ProjectViewProjectNode" />
@@ -515,7 +522,7 @@
       <workItem from="1621331861530" duration="861000" />
       <workItem from="1621403850058" duration="4563000" />
       <workItem from="1621412504775" duration="4229000" />
-      <workItem from="1621426012006" duration="1214000" />
+      <workItem from="1621426012006" duration="1508000" />
     </task>
     <task id="LOCAL-00001" summary="搭建">
       <created>1621328727516</created>
@@ -594,7 +601,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621419112478</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="搭建11">
+      <created>1621471511887</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1621471511887</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -606,7 +620,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14256000" />
+    <option name="totallyTimeSpent" value="14550000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1933" height="1063" extended-state="6" />
@@ -708,7 +722,8 @@
     <MESSAGE value="搭建8" />
     <MESSAGE value="搭建9" />
     <MESSAGE value="搭建10" />
-    <option name="LAST_COMMIT_MESSAGE" value="搭建10" />
+    <MESSAGE value="搭建11" />
+    <option name="LAST_COMMIT_MESSAGE" value="搭建11" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -971,6 +986,13 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fubang/config/WebConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="9" column="56" lean-forward="true" selection-start-line="9" selection-start-column="56" selection-end-line="9" selection-end-column="56" />
         </state>
       </provider>
     </entry>
