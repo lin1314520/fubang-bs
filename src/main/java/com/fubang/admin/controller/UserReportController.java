@@ -238,49 +238,57 @@ public class UserReportController {
         QueryWrapper<UserReport> queryWrapper = new QueryWrapper();
         queryWrapper.eq("is_valid", 0).orderByDesc("create_time").eq("user_id",userId).like("report_year",reportYear);
         List<UserReport> list = userReportService.list(queryWrapper);
+        if (list.size() == 0) {
+        return Result.builder().code(415).message("没有此学年报告").create();
+        }
+
         int sumFenShu =0;
         for (UserReport u:list
         ) {
              sumFenShu = Integer.parseInt(u.getReportCredit()) + sumFenShu;
         }
+        int i = Integer.parseInt(reportYear) + 1;
         Map<String, Object> paramMap = new HashMap<>();
         paramMap.put("${gradeS}",reportYear);
-        paramMap.put("${gradeE}", reportYear);
+        paramMap.put("${gradeE}", i+"");
         paramMap.put("${studentName}",sysUserLogin.getUserName());
         paramMap.put("${studentNumber}",sysUserLogin.getUserNum());
         paramMap.put("${studentSex}", sysUserLogin.getUserSex());
         SchoolCollegeClassMajor schoolCollegeClassMajor1 = schoolCollegeClassMajorService.selectById(schoolCollegeClassMajor.getPid());
-        if(ObjectUtils.isNotEmpty(schoolCollegeClassMajor1)) {
-            paramMap.put("${grade}", schoolCollegeClassMajor1.getNikeName());
-        }
+//        if(ObjectUtils.isNotEmpty(schoolCollegeClassMajor1)) {
+            paramMap.put("${grade}",  sysUserLogin.getUserYear());
+//        }
         SchoolCollegeClassMajor schoolCollegeClassMajor2 = schoolCollegeClassMajorService.selectById(schoolCollegeClassMajor1.getPid());
         if(ObjectUtils.isNotEmpty(schoolCollegeClassMajor2)) {
             paramMap.put("${major}", schoolCollegeClassMajor2.getNikeName());
         }
         paramMap.put("${studentClass}", schoolCollegeClassMajor.getNikeName());
+
         paramMap.put("${resultClass0}", list.get(0).getReportType());
-        paramMap.put("${resultClass1}", list.get(0).getReportName());
-        paramMap.put("${resultClass2}", list.get(0).getReportYear());
-        paramMap.put("${resultClass3}", list.get(0).getReportRanking());
-        paramMap.put("${resultName0}",  list.get(0).getReportCredit());
+        paramMap.put("${resultClass1}", "1");
+        paramMap.put("${resultClass2}", "2");
+        paramMap.put("${resultClass3}", "3");
+
+        paramMap.put("${resultName0}",  list.get(0).getReportName());
         paramMap.put("${resultName1}", "Java开发5");
         paramMap.put("${resultName2}", "Java开发6");
         paramMap.put("${resultName3}", "Java开发7");
-        paramMap.put("${resultTime0}", "Java开发8");
-        paramMap.put("${resultTime1}", "Java开发9");
 
+        paramMap.put("${resultTime0}", list.get(0).getReportYear());
+        paramMap.put("${resultTime1}", "Java开发9");
         paramMap.put("${resultTime2}", "Java开发0");
         paramMap.put("${resultTime3}", "Java开发11");
-        paramMap.put("${rank0}", "Java开发111");
+
+        paramMap.put("${rank0}", list.get(0).getReportRanking());
         paramMap.put("${rank1}", "Java开发1111");
         paramMap.put("${rank2}", "Java开发11111");
-
         paramMap.put("${rank3}", "Java开发222");
-        paramMap.put("${score0}", "Java开发22");
+
+        paramMap.put("${score0}", list.get(0).getReportCredit());
         paramMap.put("${score1}", "Java开发333");
         paramMap.put("${score2}", "Java开发444");
         paramMap.put("${score3}", "Java开发55");
-        paramMap.put("${scoreAll}", sumFenShu);
+        paramMap.put("${scoreAll}", sumFenShu+"");
 
         // 模板填充
         XWPFDocument doc = WordUtil.generateWord(paramMap, template);

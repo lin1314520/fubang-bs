@@ -3,14 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="57131612-2b5f-4046-97a8-7ae666af0c64" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fubang/admin/controller/SysUserLoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fubang/admin/controller/SysUserLoginController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/fubang/admin/controller/UserReportController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fubang/admin/controller/UserReportController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/fubang/admin/entity/SysUserLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fubang/admin/entity/SysUserLogin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fubang/admin/entity/UserReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fubang/admin/entity/UserReport.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fubang/config/GeneratorCodeConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fubang/config/GeneratorCodeConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis/UserReportMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis/UserReportMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis/sysUserLoginMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis/sysUserLoginMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mybatis/UserReportMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mybatis/UserReportMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mybatis/sysUserLoginMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mybatis/sysUserLoginMapper.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -31,43 +27,53 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/fubang/admin/controller/UserReportController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="268" column="50" lean-forward="true" selection-start-line="268" selection-start-column="50" selection-end-line="268" selection-end-column="50" />
+            <state relative-caret-position="-523">
+              <caret line="251" column="45" lean-forward="true" selection-start-line="251" selection-start-column="45" selection-end-line="251" selection-end-column="45" />
               <folding>
                 <element signature="docComment;class#UserReportController#0" />
-                <element signature="e#1219#1234#0" />
                 <element signature="docComment;method#selectByPage#0;class#UserReportController#0" />
-                <element signature="e#1495#1762#0" />
                 <element signature="docComment;method#selectById#0;class#UserReportController#0" />
-                <element signature="e#2628#2770#0" />
-                <element signature="e#3165#3233#1" />
-                <element signature="e#3343#3433#0" />
                 <element signature="docComment;method#save#0;class#UserReportController#0" />
-                <element signature="e#3518#3587#0" />
                 <element signature="method#save#0;class#UserReportController#0" />
                 <element signature="docComment;method#update#0;class#UserReportController#0" />
-                <element signature="e#3956#4024#0" />
                 <element signature="method#update#0;class#UserReportController#0" />
                 <element signature="docComment;method#deleteById#0;class#UserReportController#0" />
-                <element signature="e#4565#4636#0" />
                 <element signature="method#deleteById#0;class#UserReportController#0" />
-                <element signature="e#5056#5116#1" />
-                <element signature="e#5277#5290#0" />
                 <element signature="method#update#1;class#UserReportController#0" />
-                <element signature="e#5494#6726#1" />
-                <element signature="e#5496#5563#0" />
-                <element signature="e#5646#5717#0" />
-                <element signature="e#5740#5792#0" />
-                <element signature="e#5806#5822#0" />
-                <element signature="e#6255#6333#0" />
-                <element signature="e#6366#6418#0" />
-                <element signature="e#6455#6531#0" />
-                <element signature="e#6554#6606#0" />
                 <element signature="method#getNewName2#0;class#UserReportController#0" />
                 <element signature="method#getNewName#0;class#UserReportController#0" />
                 <element signature="docComment;method#downWord#0;class#UserReportController#0" />
-                <element signature="e#7207#7276#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/fubang/admin/controller/SysUserLoginTempController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="61" column="55" selection-start-line="61" selection-start-column="55" selection-end-line="61" selection-end-column="55" />
+              <folding>
+                <element signature="docComment;class#SysUserLoginTempController#0" />
+                <element signature="docComment;method#selectByPage#0;class#SysUserLoginTempController#0" />
+                <element signature="method#selectByPage#0;class#SysUserLoginTempController#0" />
+                <element signature="docComment;method#selectById#0;class#SysUserLoginTempController#0" />
+                <element signature="method#selectById#0;class#SysUserLoginTempController#0" />
+                <element signature="docComment;method#save#0;class#SysUserLoginTempController#0" />
+                <element signature="method#save#0;class#SysUserLoginTempController#0" />
+                <element signature="docComment;method#update#0;class#SysUserLoginTempController#0" />
+                <element signature="docComment;method#deleteById#0;class#SysUserLoginTempController#0" />
+                <element signature="method#deleteById#0;class#SysUserLoginTempController#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/fubang/admin/entity/SysUserLoginTemp.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-614">
+              <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -75,8 +81,29 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/fubang/admin/controller/SysUserLoginController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="22">
-              <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
+            <state relative-caret-position="770">
+              <caret line="57" column="51" selection-start-line="57" selection-start-column="51" selection-end-line="57" selection-end-column="51" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/fubang/admin/entity/SysUserLogin.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1100">
+              <caret line="63" column="27" selection-start-line="63" selection-start-column="19" selection-end-line="63" selection-end-column="27" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/sysUserLoginMapper.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="286">
+              <caret line="13" column="67" selection-start-line="13" selection-start-column="67" selection-end-line="13" selection-end-column="67" />
             </state>
           </provider>
         </entry>
@@ -93,7 +120,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/fubang/admin/service/impl/SysUserLoginServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="422">
+            <state relative-caret-position="682">
               <caret line="44" column="30" selection-start-line="44" selection-start-column="30" selection-end-line="44" selection-end-column="30" />
             </state>
           </provider>
@@ -102,7 +129,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/fubang/admin/entity/UserReport.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="38">
+            <state relative-caret-position="308">
               <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
             </state>
           </provider>
@@ -111,7 +138,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/fubang/admin/entity/SchoolCollegeClassMajor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="466">
+            <state relative-caret-position="572">
               <caret line="38" column="19" selection-start-line="38" selection-start-column="19" selection-end-line="38" selection-end-column="19" />
             </state>
           </provider>
@@ -178,12 +205,12 @@
         <option value="$PROJECT_DIR$/src/main/java/com/fubang/admin/controller/SysUserLoginController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/fubang/admin/entity/UserReport.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mybatis/UserReportMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/fubang/admin/entity/SysUserLogin.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mybatis/sysUserLoginMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/fubang/config/GeneratorCodeConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/fubang/admin/entity/SysUserLoginTemp.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mybatis/SysUserLoginTempMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/fubang/admin/controller/SysUserLoginTempController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/fubang/admin/entity/SysUserLogin.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mybatis/sysUserLoginMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/fubang/admin/controller/UserReportController.java" />
       </list>
     </option>
@@ -232,6 +259,7 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -399,7 +427,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -547,7 +574,10 @@
       <workItem from="1621575511392" duration="1565000" />
       <workItem from="1621664625532" duration="115000" />
       <workItem from="1621664749312" duration="1734000" />
-      <workItem from="1621733683908" duration="2783000" />
+      <workItem from="1621733683908" duration="2896000" />
+      <workItem from="1621749340414" duration="149000" />
+      <workItem from="1621749552777" duration="877000" />
+      <workItem from="1621754262025" duration="5546000" />
     </task>
     <task id="LOCAL-00001" summary="搭建">
       <created>1621328727516</created>
@@ -661,7 +691,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621515680715</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="搭建15">
+      <created>1621736571297</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1621736571297</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -673,13 +710,13 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44108000" />
+    <option name="totallyTimeSpent" value="50793000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1933" height="1063" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23946667" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24746667" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="JRebel" order="3" side_tool="true" />
@@ -691,7 +728,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.2671674" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.29828325" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.11480687" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -779,7 +816,8 @@
     <MESSAGE value="搭建12" />
     <MESSAGE value="搭建13" />
     <MESSAGE value="搭建14" />
-    <option name="LAST_COMMIT_MESSAGE" value="搭建14" />
+    <MESSAGE value="搭建15" />
+    <option name="LAST_COMMIT_MESSAGE" value="搭建15" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1055,13 +1093,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/sysUserLoginMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="11" column="58" selection-start-line="11" selection-start-column="58" selection-end-line="11" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/fubang/config/GeneratorCodeConfig.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
@@ -1076,70 +1107,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fubang/admin/entity/SysUserLoginTemp.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fubang/admin/controller/SysUserLoginController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="413">
-          <caret line="84" column="19" selection-start-line="84" selection-start-column="19" selection-end-line="84" selection-end-column="19" />
+        <state relative-caret-position="770">
+          <caret line="57" column="51" selection-start-line="57" selection-start-column="51" selection-end-line="57" selection-end-column="51" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/fubang/admin/entity/SysUserLogin.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="27" column="13" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
+        <state relative-caret-position="1100">
+          <caret line="63" column="27" selection-start-line="63" selection-start-column="19" selection-end-line="63" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fubang/admin/controller/SysUserLoginTempController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/sysUserLoginMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="122" column="70" lean-forward="true" selection-start-line="122" selection-start-column="70" selection-end-line="122" selection-end-column="70" />
-          <folding>
-            <element signature="docComment;class#SysUserLoginTempController#0" />
-            <element signature="e#1009#1024#0" />
-            <element signature="docComment;method#selectByPage#0;class#SysUserLoginTempController#0" />
-            <element signature="e#1273#1528#0" />
-            <element signature="method#selectByPage#0;class#SysUserLoginTempController#0" />
-            <element signature="docComment;method#selectById#0;class#SysUserLoginTempController#0" />
-            <element signature="e#2205#2339#0" />
-            <element signature="method#selectById#0;class#SysUserLoginTempController#0" />
-            <element signature="e#2601#2833#0" />
-            <element signature="e#2705#2760#1" />
-            <element signature="e#2863#2944#0" />
-            <element signature="docComment;method#save#0;class#SysUserLoginTempController#0" />
-            <element signature="e#3008#3077#0" />
-            <element signature="method#save#0;class#SysUserLoginTempController#0" />
-            <element signature="docComment;method#update#0;class#SysUserLoginTempController#0" />
-            <element signature="e#3440#3508#0" />
-            <element signature="docComment;method#deleteById#0;class#SysUserLoginTempController#0" />
-            <element signature="e#4522#4593#0" />
-            <element signature="method#deleteById#0;class#SysUserLoginTempController#0" />
-            <element signature="e#4550#4605#1" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fubang/admin/entity/SchoolCollegeClassMajor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="466">
-          <caret line="38" column="19" selection-start-line="38" selection-start-column="19" selection-end-line="38" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fubang/admin/entity/UserReport.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fubang/admin/service/impl/SysUserLoginServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="422">
-          <caret line="44" column="30" selection-start-line="44" selection-start-column="30" selection-end-line="44" selection-end-column="30" />
+        <state relative-caret-position="286">
+          <caret line="13" column="67" selection-start-line="13" selection-start-column="67" selection-end-line="13" selection-end-column="67" />
         </state>
       </provider>
     </entry>
@@ -1150,51 +1138,71 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fubang/admin/controller/SysUserLoginController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fubang/admin/service/impl/SysUserLoginServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
+        <state relative-caret-position="682">
+          <caret line="44" column="30" selection-start-line="44" selection-start-column="30" selection-end-line="44" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fubang/admin/entity/UserReport.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fubang/admin/entity/SchoolCollegeClassMajor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="572">
+          <caret line="38" column="19" selection-start-line="38" selection-start-column="19" selection-end-line="38" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fubang/admin/controller/SysUserLoginTempController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="61" column="55" selection-start-line="61" selection-start-column="55" selection-end-line="61" selection-end-column="55" />
+          <folding>
+            <element signature="docComment;class#SysUserLoginTempController#0" />
+            <element signature="docComment;method#selectByPage#0;class#SysUserLoginTempController#0" />
+            <element signature="method#selectByPage#0;class#SysUserLoginTempController#0" />
+            <element signature="docComment;method#selectById#0;class#SysUserLoginTempController#0" />
+            <element signature="method#selectById#0;class#SysUserLoginTempController#0" />
+            <element signature="docComment;method#save#0;class#SysUserLoginTempController#0" />
+            <element signature="method#save#0;class#SysUserLoginTempController#0" />
+            <element signature="docComment;method#update#0;class#SysUserLoginTempController#0" />
+            <element signature="docComment;method#deleteById#0;class#SysUserLoginTempController#0" />
+            <element signature="method#deleteById#0;class#SysUserLoginTempController#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fubang/admin/entity/SysUserLoginTemp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-614">
+          <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/fubang/admin/controller/UserReportController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="268" column="50" lean-forward="true" selection-start-line="268" selection-start-column="50" selection-end-line="268" selection-end-column="50" />
+        <state relative-caret-position="-523">
+          <caret line="251" column="45" lean-forward="true" selection-start-line="251" selection-start-column="45" selection-end-line="251" selection-end-column="45" />
           <folding>
             <element signature="docComment;class#UserReportController#0" />
-            <element signature="e#1219#1234#0" />
             <element signature="docComment;method#selectByPage#0;class#UserReportController#0" />
-            <element signature="e#1495#1762#0" />
             <element signature="docComment;method#selectById#0;class#UserReportController#0" />
-            <element signature="e#2628#2770#0" />
-            <element signature="e#3165#3233#1" />
-            <element signature="e#3343#3433#0" />
             <element signature="docComment;method#save#0;class#UserReportController#0" />
-            <element signature="e#3518#3587#0" />
             <element signature="method#save#0;class#UserReportController#0" />
             <element signature="docComment;method#update#0;class#UserReportController#0" />
-            <element signature="e#3956#4024#0" />
             <element signature="method#update#0;class#UserReportController#0" />
             <element signature="docComment;method#deleteById#0;class#UserReportController#0" />
-            <element signature="e#4565#4636#0" />
             <element signature="method#deleteById#0;class#UserReportController#0" />
-            <element signature="e#5056#5116#1" />
-            <element signature="e#5277#5290#0" />
             <element signature="method#update#1;class#UserReportController#0" />
-            <element signature="e#5494#6726#1" />
-            <element signature="e#5496#5563#0" />
-            <element signature="e#5646#5717#0" />
-            <element signature="e#5740#5792#0" />
-            <element signature="e#5806#5822#0" />
-            <element signature="e#6255#6333#0" />
-            <element signature="e#6366#6418#0" />
-            <element signature="e#6455#6531#0" />
-            <element signature="e#6554#6606#0" />
             <element signature="method#getNewName2#0;class#UserReportController#0" />
             <element signature="method#getNewName#0;class#UserReportController#0" />
             <element signature="docComment;method#downWord#0;class#UserReportController#0" />
-            <element signature="e#7207#7276#0" />
           </folding>
         </state>
       </provider>

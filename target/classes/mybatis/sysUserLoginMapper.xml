@@ -18,10 +18,11 @@
                     <result column="user_type" property="userType" />
                     <result column="class_id" property="classId" />
                     <result column="create_time" property="createTime" />
+                    <result column="user_year" property="userYear" />
         </resultMap>
         <!-- 通用查询结果列 -->
         <sql id="Base_Column_List">
-        user_id, user_name, user_num, login_name, pass_word, avatar, union_id, open_id, nick_name, is_valid, user_type, create_time,class_id,user_sex
+        user_id, user_name, user_num, login_name, user_year,pass_word, avatar, union_id, open_id, nick_name, is_valid, user_type, create_time,class_id,user_sex
     </sql>
 
 </mapper>

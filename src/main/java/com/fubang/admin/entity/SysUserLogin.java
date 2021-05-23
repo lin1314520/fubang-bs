@@ -60,6 +60,9 @@ public class SysUserLogin implements Serializable {
     @ApiModelProperty(value = "昵称")
     private String nickName;
 
+    @ApiModelProperty(value = "用户年级")
+    private String userYear;
+
     @ApiModelProperty(value = "是否有效（0-有效，1-无效）")
     private Integer isValid;
 
