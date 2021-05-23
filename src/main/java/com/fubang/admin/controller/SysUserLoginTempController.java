@@ -1,5 +1,7 @@
 package com.fubang.admin.controller;
 
+import com.fubang.admin.entity.SysUserLogin;
+import com.fubang.admin.service.SysUserLoginService;
 import org.springframework.web.bind.annotation.*;
 import io.swagger.annotations.*;
 import com.baomidou.mybatisplus.core.toolkit.StringUtils;
@@ -15,26 +17,28 @@ import com.fubang.admin.entity.Result;
 
 import java.time.LocalDateTime;
 
-import java.util.*;
+import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.ModelMap;
-import com.fubang.admin.service.SysUserLoginService;
-import com.fubang.admin.entity.SysUserLogin;
+import com.fubang.admin.service.SysUserLoginTempService;
+import com.fubang.admin.entity.SysUserLoginTemp;
 
-import javax.websocket.server.PathParam;
+import java.util.Arrays;
 
 /**
- * 登录用户表
+ * 登录用户表中間表
  *
  * @author jcl
- * @since 2021-05-18
+ * @since 2021-05-23
  */
 @RestController
-@RequestMapping("/admin/sysUserLogin")
-@Api(tags = "登录用户表")
-public class SysUserLoginController {
+@RequestMapping("/admin/SysUserLoginTemp")
+@Api(tags = "登录用户表中間表")
+public class SysUserLoginTempController {
 
+    @Autowired
+    public SysUserLoginTempService sysUserLoginTempService;
     @Autowired
     public SysUserLoginService sysUserLoginService;
 
@@ -43,7 +47,7 @@ public class SysUserLoginController {
      * 分页查询
      *
      * @param page
-     * @param sysUserLogin
+     * @param sysUserLoginTemp
      * @return
      */
     @ApiImplicitParams({
@@ -54,16 +58,12 @@ public class SysUserLoginController {
             @ApiResponse(code = 200, message = "ok")
     })
     @ApiOperation(value = "分页查询", httpMethod = "GET", notes = "传有参数说明的参数")
-    @GetMapping(value = "/sysUserLogin")
-    public Result selectByPage(@ApiIgnore Page<SysUserLogin> page, @ApiIgnore SysUserLogin sysUserLogin) {
-        Map<String,Object> retrunMap= new HashMap<>();
-        QueryWrapper<SysUserLogin> queryWrapper = new QueryWrapper(sysUserLogin);
+    @GetMapping(value = "/sysUserLoginTemp")
+    public Result selectByPage(@ApiIgnore Page<SysUserLoginTemp> page, @ApiIgnore SysUserLoginTemp sysUserLoginTemp) {
+        QueryWrapper<SysUserLoginTemp> queryWrapper = new QueryWrapper(sysUserLoginTemp);
         queryWrapper.eq("is_valid", 0).orderByDesc("create_time");
-        Page<SysUserLogin> pageList = sysUserLoginService.page(page, queryWrapper);
-        List<SysUserLogin> returnDataList = sysUserLoginService.listData(page.getRecords());
-        retrunMap.put("pageList",pageList);
-        retrunMap.put("returnDataList",returnDataList);
-        return Result.builder().code(200).data(retrunMap).create();
+        Page<SysUserLoginTemp> pageList = sysUserLoginTempService.page(page, queryWrapper);
+        return Result.builder().code(200).data(pageList).create();
     }
 
     /**
@@ -82,7 +82,7 @@ public class SysUserLoginController {
     @GetMapping(value = "/selectById/{id}")
     public Result selectById(@ApiIgnore @PathVariable Integer id) {
         try {
-            SysUserLogin byId = sysUserLoginService.selectById(id);
+            SysUserLoginTemp byId = sysUserLoginTempService.selectById(id);
             if (ObjectUtil.isNull(byId)) {
                 return Result.error(415, "此条数据不存在");
             }
@@ -94,57 +94,44 @@ public class SysUserLoginController {
     }
 
     /**
-     * 登录接口[根据主键id]
-     *
-     * @param
-     * @return
-     */
-    //登录接口
-    @GetMapping("/login")
-    public Result login(@ApiIgnore SysUserLogin sysUserLogin) {
-        QueryWrapper<SysUserLogin> queryWrapper = new QueryWrapper(sysUserLogin);
-        queryWrapper.eq("is_valid", 0).orderByDesc("create_time");
-        Integer count = sysUserLoginService.count(queryWrapper);
-        List<SysUserLogin> list = sysUserLoginService.list(queryWrapper);
-        if (count == 1) {
-            return Result.builder().code(200).data(list.get(0)).message("登录成功").create();
-        } else {
-            return Result.builder().code(415).message("登录失败").create();
-        }
-    }
-
-    /**
      * 保存
      *
-     * @param sysUserLogin
+     * @param sysUserLoginTemp
      * @return
      */
     @ApiOperation(value = "新增", httpMethod = "POST", notes = "传有参数说明的参数")
-    @PostMapping("/sysUserLogin")
+    @PostMapping("/sysUserLoginTemp")
     @Transactional(rollbackFor = Exception.class)
-    public Result save(@ApiIgnore @RequestBody SysUserLogin sysUserLogin) {
-        sysUserLogin.setIsValid(0);
-        sysUserLoginService.save(sysUserLogin);
+    public Result save(@ApiIgnore @RequestBody SysUserLoginTemp sysUserLoginTemp) {
+        sysUserLoginTemp.setIsValid(0);
+        sysUserLoginTempService.save(sysUserLoginTemp);
         return Result.builder().code(200).create();
     }
 
     /**
      * 修改
      *
-     * @param sysUserLogin
+     * @param sysUserLoginTemp
      * @return
      */
     @ApiOperation(value = "修改", httpMethod = "PUT", notes = "传有参数说明的参数")
-    @PutMapping("/sysUserLogin")
+    @PutMapping("/sysUserLoginTemp")
     @Transactional(rollbackFor = Exception.class)
-    public Result update(@ApiIgnore @RequestBody SysUserLogin sysUserLogin) {
-        QueryWrapper<SysUserLogin> query = Wrappers.query();
-        query.eq("user_id", sysUserLogin.getUserId()).eq("is_valid", 0);
-        SysUserLogin byId = sysUserLoginService.getOne(query);
+    public Result update(@ApiIgnore @RequestBody SysUserLoginTemp sysUserLoginTemp) {
+        QueryWrapper<SysUserLoginTemp> query = Wrappers.query();
+        query.eq("id", sysUserLoginTemp.getId()).eq("is_valid", 0);
+        SysUserLoginTemp byId = sysUserLoginTempService.getOne(query);
         //修改字段
-
-
-        sysUserLoginService.updateById(sysUserLogin);
+        if(sysUserLoginTemp.getStatusType().equals("1")) {
+            SysUserLogin sysUserLogin = new SysUserLogin();
+            sysUserLogin.setUserId(sysUserLoginTemp.getUserId());
+            sysUserLogin.setUserName(sysUserLoginTemp.getUserName());
+            sysUserLogin.setUserSex(sysUserLoginTemp.getUserSex());
+            sysUserLogin.setUserNum(sysUserLoginTemp.getUserNum());
+            sysUserLogin.setClassId(sysUserLoginTemp.getClassId());
+            sysUserLoginService.updateById(sysUserLogin);
+        }
+        sysUserLoginTempService.updateById(sysUserLoginTemp);
         return Result.builder().code(200).create();
     }
 
@@ -156,17 +143,17 @@ public class SysUserLoginController {
      * @return
      */
     @ApiOperation(value = "删除", httpMethod = "DELETE", notes = "传有参数说明的参数")
-    @DeleteMapping("/sysUserLogin/{id}")
+    @DeleteMapping("/sysUserLoginTemp/{id}")
     @Transactional(rollbackFor = Exception.class)
     public Result deleteById(@PathVariable("id") @ApiParam(name = "id", value = "id", required = true) Integer id) {
-        QueryWrapper<SysUserLogin> query = Wrappers.query();
-        query.eq("user_id", id).eq("is_valid", 0);
-        SysUserLogin sysUserLogin = sysUserLoginService.getOne(query);
-        if (ObjectUtil.isNull(sysUserLogin)) {
+        QueryWrapper<SysUserLoginTemp> query = Wrappers.query();
+        query.eq("id", id).eq("is_valid", 0);
+        SysUserLoginTemp sysUserLoginTemp = sysUserLoginTempService.getOne(query);
+        if (ObjectUtil.isNull(sysUserLoginTemp)) {
             return Result.error(405, "此数据已被删除");
         }
-        sysUserLogin.setIsValid(1);
-        sysUserLoginService.updateById(sysUserLogin);
+        sysUserLoginTemp.setIsValid(1);
+        sysUserLoginTempService.updateById(sysUserLoginTemp);
         return Result.builder().code(200).create();
     }
 

@@ -1,6 +1,11 @@
 package com.fubang.admin.controller;
 
+import com.fubang.admin.entity.SchoolCollegeClassMajor;
+import com.fubang.admin.entity.SysUserLogin;
+import com.fubang.admin.service.SchoolCollegeClassMajorService;
+import com.fubang.admin.service.SysUserLoginService;
 import com.fubang.util.WordUtil;
+import org.apache.commons.lang3.ObjectUtils;
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
 import org.apache.tomcat.util.http.fileupload.IOUtils;
 import org.springframework.web.bind.annotation.*;
@@ -42,6 +47,10 @@ public class UserReportController {
 
     @Autowired
     public UserReportService userReportService;
+    @Autowired
+    public SysUserLoginService sysUserLoginService;
+    @Autowired
+    public SchoolCollegeClassMajorService schoolCollegeClassMajorService;
 
 
     /**
@@ -63,6 +72,10 @@ public class UserReportController {
     public Result selectByPage(@ApiIgnore Page<UserReport> page, @ApiIgnore UserReport userReport) {
         QueryWrapper<UserReport> queryWrapper = new QueryWrapper(userReport);
         queryWrapper.eq("is_valid", 0).orderByDesc("create_time");
+        if(ObjectUtil.isNotNull(userReport.getReportYear())) {
+            queryWrapper.like("report_year", userReport.getReportYear());
+            userReport.setReportYear(null);
+        }
         Page<UserReport> pageList = userReportService.page(page, queryWrapper);
         return Result.builder().code(200).data(pageList).create();
     }
@@ -214,42 +227,60 @@ public class UserReportController {
      * @param
      * @return
      */
-    @ApiOperation(value = "下载", httpMethod = "PUT", notes = "传有参数说明的参数")
+    @ApiOperation(value = "下载", httpMethod = "POST", notes = "传有参数说明的参数")
     @PostMapping("/downWord")
     @Transactional(rollbackFor = Exception.class)
-    public Result downWord() throws Exception {
+    public Result downWord(@RequestParam(value = "userId") Integer userId,@RequestParam(value = "reportYear") String reportYear) throws Exception {
         Map<String, Object> returnData =  new HashMap<>();
         String template = "C:\\Users\\g1121\\Desktop\\导出Word表格样式.docx";
+        SysUserLogin sysUserLogin = sysUserLoginService.getById(userId);
+        SchoolCollegeClassMajor schoolCollegeClassMajor = schoolCollegeClassMajorService.selectById(sysUserLogin.getClassId());
+        QueryWrapper<UserReport> queryWrapper = new QueryWrapper();
+        queryWrapper.eq("is_valid", 0).orderByDesc("create_time").eq("user_id",userId).like("report_year",reportYear);
+        List<UserReport> list = userReportService.list(queryWrapper);
+        int sumFenShu =0;
+        for (UserReport u:list
+        ) {
+             sumFenShu = Integer.parseInt(u.getReportCredit()) + sumFenShu;
+        }
         Map<String, Object> paramMap = new HashMap<>();
-        paramMap.put("${gradeS}", "乌龟");
-        paramMap.put("${gradeE}", "男");
-        paramMap.put("${studentName}", "1998年10月22日");
-        paramMap.put("${studentNumber}", "汉族");
-        paramMap.put("${studentSex}", "广东深圳");
-        paramMap.put("${major}", "广东汕头");
-        paramMap.put("${grade}", "团员");
-        paramMap.put("${studentClass}", "2020年3月16日");
-        paramMap.put("${resultClass0}", "良好");
-        paramMap.put("${resultClass1}", "软件开发1");
-        paramMap.put("${resultClass2}", "Java开发2");
-        paramMap.put("${resultClass3}", "Java开发3");
-        paramMap.put("${resultName0}", "Java开发4");
+        paramMap.put("${gradeS}",reportYear);
+        paramMap.put("${gradeE}", reportYear);
+        paramMap.put("${studentName}",sysUserLogin.getUserName());
+        paramMap.put("${studentNumber}",sysUserLogin.getUserNum());
+        paramMap.put("${studentSex}", sysUserLogin.getUserSex());
+        SchoolCollegeClassMajor schoolCollegeClassMajor1 = schoolCollegeClassMajorService.selectById(schoolCollegeClassMajor.getPid());
+        if(ObjectUtils.isNotEmpty(schoolCollegeClassMajor1)) {
+            paramMap.put("${grade}", schoolCollegeClassMajor1.getNikeName());
+        }
+        SchoolCollegeClassMajor schoolCollegeClassMajor2 = schoolCollegeClassMajorService.selectById(schoolCollegeClassMajor1.getPid());
+        if(ObjectUtils.isNotEmpty(schoolCollegeClassMajor2)) {
+            paramMap.put("${major}", schoolCollegeClassMajor2.getNikeName());
+        }
+        paramMap.put("${studentClass}", schoolCollegeClassMajor.getNikeName());
+        paramMap.put("${resultClass0}", list.get(0).getReportType());
+        paramMap.put("${resultClass1}", list.get(0).getReportName());
+        paramMap.put("${resultClass2}", list.get(0).getReportYear());
+        paramMap.put("${resultClass3}", list.get(0).getReportRanking());
+        paramMap.put("${resultName0}",  list.get(0).getReportCredit());
         paramMap.put("${resultName1}", "Java开发5");
         paramMap.put("${resultName2}", "Java开发6");
         paramMap.put("${resultName3}", "Java开发7");
         paramMap.put("${resultTime0}", "Java开发8");
         paramMap.put("${resultTime1}", "Java开发9");
+
         paramMap.put("${resultTime2}", "Java开发0");
         paramMap.put("${resultTime3}", "Java开发11");
         paramMap.put("${rank0}", "Java开发111");
         paramMap.put("${rank1}", "Java开发1111");
         paramMap.put("${rank2}", "Java开发11111");
+
         paramMap.put("${rank3}", "Java开发222");
         paramMap.put("${score0}", "Java开发22");
         paramMap.put("${score1}", "Java开发333");
         paramMap.put("${score2}", "Java开发444");
         paramMap.put("${score3}", "Java开发55");
-        paramMap.put("${scoreAll}", "Java开发555");
+        paramMap.put("${scoreAll}", sumFenShu);
 
         // 模板填充
         XWPFDocument doc = WordUtil.generateWord(paramMap, template);

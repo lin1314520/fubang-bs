@@ -1,10 +1,9 @@
 package com.fubang.admin.entity;
 
-import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;
-import java.time.LocalDate;
 import com.baomidou.mybatisplus.annotation.TableId;
+import java.time.LocalDateTime;
 import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
@@ -16,21 +15,24 @@ import lombok.experimental.Accessors;
 import java.util.Date;
 
 /**
- * 登录用户表
+ * 登录用户表中間表
  * @author jcl
- * @since 2021-05-18
+ * @since 2021-05-23
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-@TableName("sys_user_login")
-@ApiModel(value="SysUserLogin对象", description="登录用户表")
-public class SysUserLogin implements Serializable {
+@TableName("sys_user_login_temp")
+@ApiModel(value="SysUserLoginTemp对象", description="登录用户表中間表")
+public class SysUserLoginTemp implements Serializable {
 
     private static final long serialVersionUID=1L;
 
+    @ApiModelProperty(value = "id")
+    @TableId(value = "id", type = IdType.AUTO)
+    private Integer id;
+
     @ApiModelProperty(value = "用户id")
-    @TableId(value = "user_id", type = IdType.AUTO)
     private Integer userId;
 
     @ApiModelProperty(value = "用户姓名")
@@ -38,9 +40,6 @@ public class SysUserLogin implements Serializable {
 
     @ApiModelProperty(value = "学号")
     private String userNum;
-
-    @ApiModelProperty(value = "学生性别")
-    private String userSex;
 
     @ApiModelProperty(value = "登录账号")
     private String loginName;
@@ -63,9 +62,6 @@ public class SysUserLogin implements Serializable {
     @ApiModelProperty(value = "是否有效（0-有效，1-无效）")
     private Integer isValid;
 
-    @ApiModelProperty(value = "班级Id")
-    private Integer classId;
-
     @ApiModelProperty(value = "用户类型,超级管理员：admin，辅导员：counselor，评审员:reviewers")
     private String userType;
 
@@ -73,8 +69,20 @@ public class SysUserLogin implements Serializable {
     @ApiModelProperty(value = "创建时间")
     private Date createTime;
 
-    @TableField(exist = false)
-    private  String reportCredit;
+    @ApiModelProperty(value = "班级id")
+    private Integer classId;
+
+    @ApiModelProperty(value = "用戶性別")
+    private String userSex;
+
+    @ApiModelProperty(value = "原因")
+    private String reason;
+
+    @ApiModelProperty(value = "退回原因")
+    private String backReason;
+
+    @ApiModelProperty(value = "是否通过(1-通过，2-不通过)")
+    private String statusType;
 
 
 }

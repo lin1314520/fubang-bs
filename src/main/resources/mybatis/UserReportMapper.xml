@@ -15,11 +15,12 @@
                     <result column="report_ranking" property="reportRanking" />
                     <result column="report_credit" property="reportCredit" />
                     <result column="is_valid" property="isValid" />
+                    <result column="report_reason" property="reportReason" />
                     <result column="create_time" property="createTime" />
         </resultMap>
         <!-- 通用查询结果列 -->
         <sql id="Base_Column_List">
-        id, user_id, school_id, report_name, img_url, report_year, img_status, report_type, report_ranking, report_credit, is_valid, create_time
+        id, user_id, school_id, report_name, img_url, report_year, img_status, report_type, report_ranking, report_credit, is_valid,report_reason, create_time
     </sql>
 
 </mapper>

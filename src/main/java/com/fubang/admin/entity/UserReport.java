@@ -59,6 +59,9 @@ public class UserReport implements Serializable {
     @ApiModelProperty(value = "报告学分")
     private String reportCredit;
 
+    @ApiModelProperty(value = "报告原因备注")
+    private String reportReason;
+
     @ApiModelProperty(value = "是否有效（0-有效，1-无效）")
     private Integer isValid;
 
